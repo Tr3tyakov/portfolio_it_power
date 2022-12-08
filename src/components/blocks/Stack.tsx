@@ -18,14 +18,15 @@ const Stack = () => {
     const Item = styled(Paper)(({ theme }) => ({
         ...theme.typography.body2,
         border: '2px solid #212b36',
-        boxShadow: '-6px 6px 4px rgb(250,84,27, 0.85)',
+        borderRadius: '3px',
+        boxShadow: '-6px 6px 2px rgb(250,84,27, 0.85)',
         padding: theme.spacing(2),
         color: theme.palette.text.secondary,
     }));
 
     return (
         <ContainerLayouts>
-            <Container maxWidth={"md"}>
+            <Container maxWidth={"lg"}>
                 <Typography
                     component={'div'} width='100%'
                     fontSize='2.75rem' fontWeight='700'
@@ -38,6 +39,9 @@ const Stack = () => {
                     <Grid item xs={6}>
                         <Item>
                             <h3 className='stack_h'>BackEnd</h3>
+                            <Typography marginY='15px'>
+                                In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                            </Typography>
                             <Box display='flex' gap={1}>
                                 <img className='stack_icon' src={DjangoIcon} />
                                 <img className='stack_icon' src={PostgresqlIcon} />
@@ -48,6 +52,9 @@ const Stack = () => {
                     <Grid item xs={6}>
                         <Item>
                             <h3 className='stack_h'>FrontEnd</h3>
+                            <Typography marginY='15px'>
+                                In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                            </Typography>
                             <Box display='flex' gap={1}>
                                 <img className='stack_icon' src={VueIcon} />
                                 <img className='stack_icon' src={ReactIcon} />
@@ -58,6 +65,9 @@ const Stack = () => {
                     <Grid item xs={6}>
                         <Item>
                             <h3 className='stack_h'>Android</h3>
+                            <Typography marginY='15px'>
+                                In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                            </Typography>
                             <Box display='flex' gap={1}>
                                 <img className='stack_icon' src={GoogleMapIcon} />
                                 <img className='stack_icon' src={KotlinIcon} />
@@ -67,6 +77,9 @@ const Stack = () => {
                     <Grid item xs={6}>
                         <Item>
                             <h3 className='stack_h'>IOS</h3>
+                            <Typography marginY='15px'>
+                                In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                            </Typography>
                             <Box display='flex' gap={1}>
                                 <img className='stack_icon' src={SwiftIcon} />
                                 <img className='stack_icon' src={UiKitIcon} />
