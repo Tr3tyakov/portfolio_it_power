@@ -1,28 +1,39 @@
-body{
-  font-family: 'Roboto', sans-serif;
-  margin:0;
-  box-sizing:border-box;
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a{
+a {
   text-decoration: none;
-  margin:0
+  margin: 0
 }
 
-:root{
+:root {
   //color
-
+  --orange: #FA541B;
+  --gray: #6d7786;
+  --black: #212b36;
+  --white-blue: #d6f2fc;
 
   //transition
   --transition: all ease .3s;
 
   //font-size
+  --title: 3.625rem;
+  --subtitle: 1rem;
+  --standart: 0.875rem;
+
+  //font-weight
+  --title-weigth: 700;
+  --subtitle-weight:400;
+  --button:600;
 
 }
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   margin: 0;
 }

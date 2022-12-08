@@ -3,7 +3,7 @@ import "./App.scss";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import StartPage from './components/pages/StartPage'
 
-function App() {
+const App = () =>{
     return (
         <BrowserRouter>
             <Routes>
