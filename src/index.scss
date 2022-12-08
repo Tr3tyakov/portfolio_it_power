@@ -1,0 +1,28 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  margin:0;
+  box-sizing:border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+  margin:0
+}
+
+:root{
+  //color
+
+
+  //transition
+  --transition: all ease .3s;
+
+  //font-size
+
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  padding: 0;
+  margin: 0;
+}
