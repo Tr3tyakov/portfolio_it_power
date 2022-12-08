@@ -28,8 +28,8 @@ a {
 
   //font-weight
   --title-weigth: 700;
-  --subtitle-weight:400;
-  --button:600;
+  --subtitle-weight: 400;
+  --button: 600;
 
   //box-shadow
   --shadow-standart: 0 3px 2px lightgray;
@@ -39,4 +39,19 @@ a {
 h1, h2, h3, h4, h5, h6, p {
   padding: 0;
   margin: 0;
+}
+
+.about__block__text{
+  border-left: 1px solid var(--gray) !important;
+  transition: var(--transition);
+  display:flex;
+  align-items:center;
+  height:100%;
+  padding-left:50px;
+  max-width:600px
+}
+
+.about__block:hover > .about__block__text {
+  border-left: 1px solid var(--orange) !important;
+  transition: var(--transition)
 }

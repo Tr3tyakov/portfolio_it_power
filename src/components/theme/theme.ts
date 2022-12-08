@@ -146,12 +146,12 @@ export const theme = createTheme({
         },
         divider: '#E6E8F0',
         primary: {
-            main: '#212b36',
+            main: '#FA541B',
             contrastText: '#FFFFFF'
 
         },
         secondary: {
-            main: '#FA541B',
+            main: '#212b36',
             contrastText: '#FFFFFF'
         },
         success: {

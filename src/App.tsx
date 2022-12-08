@@ -1,5 +1,5 @@
 import React from "react";
-import {Header, Main, Stack, Footer} from "./components/blocks/index";
+import {Header, Main, Stack, Footer, AboutUs} from "./components/blocks/index";
 
 
 const App = () =>{
@@ -7,6 +7,7 @@ const App = () =>{
         <>
             <Header/>
             <Main/>
+            <AboutUs/>
             <Stack/>
             <Footer/>
 

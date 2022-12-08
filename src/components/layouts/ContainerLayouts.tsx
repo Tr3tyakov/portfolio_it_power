@@ -9,9 +9,7 @@ interface IContainerLayouts {
 const ContainerLayouts: React.FC<IContainerLayouts> = ({children}) => {
 
     return <Container maxWidth='xl'>
-        <Box p='0 20px'>
-            {children}
-        </Box>
+        {children}
     </Container>
 }
 

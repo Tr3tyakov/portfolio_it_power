@@ -6,21 +6,17 @@ const Main = () => {
 
     return (
         <ContainerLayouts>
-            <Container maxWidth='lg'>
-                <Box display='flex' p='0 20px' mt='30px' alignItems='center'>
-                    <Box whiteSpace='nowrap'>
+                <Box display='flex' gap='20px' justifyContent='center' flexWrap='wrap' alignItems='center' mt='120px' mb='20px'>
+                    <Box>
                         <Typography component='span' fontSize='3.625rem' fontWeight='700' color='#212b36'>
-                            Create Your <br/> project Today <br/> with <Typography component='span'
-                                                                                   fontSize='3.625rem'
-                                                                                   fontWeight='700'
-                                                                                   color='#FA541B'>ITPOWER</Typography>
+                            Create Your <br/> project Today <br/> with&nbsp;
+                            <Typography component='span' fontSize='3.625rem' fontWeight='700' color='#FA541B'>ITPOWER</Typography>
                         </Typography>
                     </Box>
                     <Box>
                         <img src={cards} alt="Картинка"/>
                     </Box>
                 </Box>
-            </Container>
         </ContainerLayouts>
     );
 };
