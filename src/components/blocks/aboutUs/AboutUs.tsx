@@ -3,28 +3,52 @@ import ContainerLayouts from '../../layouts/ContainerLayouts'
 import {Box, Typography, Button} from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {IAboutUsInfo} from "./aboutUs.interfaces";
-
+import clsx from 'clsx'
 
 const aboutUsInfo: IAboutUsInfo[] = [
-    {title: 'Проектов', quantity: '150', about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.'},
+    {
+        title: 'Проектов',
+        quantity: '150',
+        about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
+        elevation: 60
+    },
     {
         title: 'Счастливых клиентов',
         quantity: '32k',
-        about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.'
+        about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
+        elevation: 180
     },
-    {title: 'Лет опыта', quantity: '20', about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.'},
+    {
+        title: 'Лет опыта',
+        quantity: '20',
+        about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
+        elevation: 320
+    },
 ]
 
 const AboutUs: React.FC = () => {
     const [height, setHeight] = React.useState<number>(0)
     React.useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= 60 && window.scrollY <= 270)
-                console.log(270 - window.scrollY)
-
-
-        })
+        window.addEventListener('scroll', scroll)
+        return () => {
+            window.removeEventListener('scroll', scroll)
+        }
     }, [])
+
+    const scroll = () => {
+        if (window.scrollY >= 60 && window.scrollY <= 310) {
+            console.log(Math.floor((window.scrollY - 60) * 1.5))
+            setHeight(Math.floor((window.scrollY - 60) * 1.5))
+            return
+        }
+        if (window.scrollY < 60) {
+            setHeight(0)
+            return
+        }
+        
+        setHeight(370)
+
+    }
 
     return (
         <ContainerLayouts>
@@ -49,11 +73,14 @@ const AboutUs: React.FC = () => {
                                 egestas</Typography>
                         </Box>
                         <Box display='flex' justifyContent='flex-end' alignItems='center'>
-                            <Button endIcon={<ArrowForwardIosIcon/>} variant='contained'>Узнать больше</Button>
+                            <Button className='box__shadow' endIcon={<ArrowForwardIosIcon/>} variant='outlined'>Узнать
+                                больше</Button>
                         </Box>
-                        <Box position='absolute' width='20px' right='-60px' bgcolor='#6d778617' borderRadius='6px'
-                             top='0' bottom='0'>
-                            <Box top='0' height='1%' bgcolor='#FA541B'></Box>
+                        <Box position='absolute' width='5px' right='-60px' bgcolor='#6d778617'
+                             borderRadius='6px'
+                             top='0' bottom='-20px'>
+                            <Box boxShadow='0px 2px 5px 2px lightgray' borderRadius='6px' top='0' height={height + 'px'}
+                                 bgcolor='#FA541B'></Box>
                         </Box>
                     </Box>
 
@@ -63,7 +90,8 @@ const AboutUs: React.FC = () => {
                         <Box className='about__block' display='flex' alignItems='center'>
                             <Box display='flex' flexDirection='column' maxWidth='100px' width='100%' mr='40px'>
                                 <Typography fontSize='2.75rem' fontWeight={700}>{element.quantity}</Typography>
-                                <Typography fontWeight='600' color='#6d7786'>{element.title}</Typography>
+                                <Typography fontWeight='600'
+                                            color={height > element.elevation ? '#FA541B' : '#6d7786'}>{element.title}</Typography>
                             </Box>
                             <Box className='about__block__text'>
                                 <Typography fontWeight='600' fontSize='0.9rem'
