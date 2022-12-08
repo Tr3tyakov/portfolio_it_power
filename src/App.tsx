@@ -1,14 +1,17 @@
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import StartPage from './components/pages/StartPage'
+import {Header, Main, Stack, Footer} from "./components/blocks/index";
+
 
 const App = () =>{
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<StartPage/>} />
-            </Routes>
-        </BrowserRouter>
+        <>
+            <Header/>
+            <Main/>
+            <Stack/>
+            <Footer/>
+
+        </>
+
     );
 }
 
