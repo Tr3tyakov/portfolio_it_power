@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.scss";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import StartPage from './components/pages/StartPage'
 
