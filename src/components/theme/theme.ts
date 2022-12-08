@@ -13,7 +13,7 @@ export const theme = createTheme({
     components: {
         MuiButton: {
             defaultProps: {
-                disableElevation: true
+                disableElevation: false
             },
             styleOverrides: {
                 root: {
@@ -146,15 +146,12 @@ export const theme = createTheme({
         },
         divider: '#E6E8F0',
         primary: {
-            main: '#5048E5',
-            light: '#828DF8',
-            dark: '#3832A0',
+            main: '#212b36',
             contrastText: '#FFFFFF'
+
         },
         secondary: {
-            main: '#10B981',
-            light: '#3FC79A',
-            dark: '#0B815A',
+            main: '#FA541B',
             contrastText: '#FFFFFF'
         },
         success: {
@@ -164,9 +161,7 @@ export const theme = createTheme({
             contrastText: '#FFFFFF'
         },
         info: {
-            main: '#2196F3',
-            light: '#64B6F7',
-            dark: '#0B79D0',
+            main: '#d6f2fc',
             contrastText: '#FFFFFF'
         },
         warning: {
@@ -221,7 +216,7 @@ export const theme = createTheme({
         button: {
             fontWeight: 600
         },
-        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+        fontFamily: '"Montserrat", sans-serif;',
         body1: {
             fontSize: '1rem',
             fontWeight: 400,

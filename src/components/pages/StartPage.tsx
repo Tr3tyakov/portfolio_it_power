@@ -1,12 +1,18 @@
 import React from 'react'
-import {Box} from '@mui/material'
+import {Box, Container} from '@mui/material'
 
-const StartPage:React.FC = ()=>{
+const StartPage: React.FC = () => {
 
 
-    return <Box>
+    return (
+        <Box component='div' position='fixed' width='100vw' height='50px' bgcolor='black'>
+            <Container maxWidth='xs'>
+                <Box>
 
-    </Box>
+                </Box>
+            </Container>
+        </Box>
+    )
 }
 
 export default StartPage
