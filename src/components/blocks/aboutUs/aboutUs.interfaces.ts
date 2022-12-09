@@ -3,5 +3,6 @@ export  interface IAboutUsInfo {
     title:string,
     quantity: string,
     about:string,
-    elevation:number
+    elevation:number,
+    id:string,
 }

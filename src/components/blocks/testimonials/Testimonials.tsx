@@ -27,23 +27,23 @@ const Testimonials = () => {
                     <Typography fontWeight={600} fontSize='2.75rem' color='#212b36'>Кому понравилась наша
                         работа</Typography>
                 </Box>
-                <Slider {...settings}>
-                    {mockTestimonials.map((element)=>(
-                        <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column'>
-                            <Box maxWidth='500px' display='flex' justifyContent='center' alignItems='center'
-                                 textAlign='center' mb='30px'>
-                                <Typography fontSize='1rem' fontWeight={400}>
-                                    {element.text}
-                                </Typography>
-                            </Box>
-                            <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center'>
-                                <Avatar/>
-                                <Typography fontSize='1rem' fontWeight={600}>{element.username}</Typography>
-                                <Typography>{element.typeUser}</Typography>
-                            </Box>
-                        </Box>
-                    ))}
-                </Slider>
+                {/*<Slider {...settings}>*/}
+                {/*    {mockTestimonials.map((element)=>(*/}
+                {/*        <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column'>*/}
+                {/*            <Box maxWidth='500px' display='flex' justifyContent='center' alignItems='center'*/}
+                {/*                 textAlign='center' mb='30px'>*/}
+                {/*                <Typography fontSize='1rem' fontWeight={400}>*/}
+                {/*                    {element.text}*/}
+                {/*                </Typography>*/}
+                {/*            </Box>*/}
+                {/*            <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center'>*/}
+                {/*                <Avatar/>*/}
+                {/*                <Typography fontSize='1rem' fontWeight={600}>{element.username}</Typography>*/}
+                {/*                <Typography>{element.typeUser}</Typography>*/}
+                {/*            </Box>*/}
+                {/*        </Box>*/}
+                {/*    ))}*/}
+                {/*</Slider>*/}
             </Box>
         </ContainerLayouts>
     );

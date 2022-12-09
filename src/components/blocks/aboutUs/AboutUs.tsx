@@ -3,22 +3,24 @@ import ContainerLayouts from '../../layouts/ContainerLayouts'
 import {Box, Typography, Button} from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {IAboutUsInfo} from "./aboutUs.interfaces";
-import clsx from 'clsx'
 
 const aboutUsInfo: IAboutUsInfo[] = [
     {
+        id: 'subtitle',
         title: 'Проектов',
         quantity: '150',
         about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
         elevation: 60
     },
     {
+        id: 'subtitle',
         title: 'Счастливых клиентов',
         quantity: '32k',
         about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
         elevation: 180
     },
     {
+        id: 'subtitle',
         title: 'Лет опыта',
         quantity: '20',
         about: 'Praesent turpis. Praesent blandit laoreet nibh. Nunc nonummy metus.',
@@ -29,23 +31,26 @@ const aboutUsInfo: IAboutUsInfo[] = [
 const AboutUs: React.FC = () => {
     const [height, setHeight] = React.useState<number>(0)
     React.useEffect(() => {
-        window.addEventListener('scroll', scroll)
+        const elements: NodeListOf<HTMLElement> = document.querySelectorAll('#subtitle')
+        if (!elements) return
+        const offsets = Array.from(elements).map((element)=>element.offsetTop)
+        window.addEventListener('scroll', ()=>scroll(offsets))
         return () => {
-            window.removeEventListener('scroll', scroll)
+            window.removeEventListener('scroll', ()=>scroll)
         }
     }, [])
 
-    const scroll = () => {
-        if (window.scrollY >= 60 && window.scrollY <= 310) {
-            console.log(Math.floor((window.scrollY - 60) * 1.5))
-            setHeight(Math.floor((window.scrollY - 60) * 1.5))
+    const scroll = (offsets:number[]) => {
+        if (window.scrollY >= offsets[0] && window.scrollY <= offsets[2]) {
+            console.log(Math.floor((window.scrollY - offsets[0]) * 1.5))
+            setHeight(Math.floor((window.scrollY - offsets[0]) * 1.5))
             return
         }
-        if (window.scrollY < 60) {
+        if (window.scrollY < offsets[0]) {
             setHeight(0)
             return
         }
-        
+
         setHeight(370)
 
     }
@@ -80,17 +85,19 @@ const AboutUs: React.FC = () => {
                              borderRadius='6px'
                              top='0' bottom='-20px'>
                             <Box boxShadow='0px 2px 5px 2px lightgray' borderRadius='6px' top='0' height={height + 'px'}
-                                 bgcolor='#FA541B'></Box>
+                                 bgcolor='#FA541B'>
+
+                            </Box>
                         </Box>
                     </Box>
 
                 </Box>
                 <Box display='flex' gap='30px' flexDirection='column'>
                     {aboutUsInfo.map((element) => (
-                        <Box className='about__block' display='flex' alignItems='center'>
+                        <Box key={element.title} className='about__block' display='flex' alignItems='center'>
                             <Box display='flex' flexDirection='column' maxWidth='100px' width='100%' mr='40px'>
                                 <Typography fontSize='2.75rem' fontWeight={700}>{element.quantity}</Typography>
-                                <Typography fontWeight='600'
+                                <Typography id={element.id} fontWeight='600'
                                             color={height > element.elevation ? '#FA541B' : '#6d7786'}>{element.title}</Typography>
                             </Box>
                             <Box className='about__block__text'>
